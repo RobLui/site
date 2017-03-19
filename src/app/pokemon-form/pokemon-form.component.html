@@ -1,0 +1,13 @@
+<form (ngSubmit)="submitPokemon()">
+  <div class="form-group">
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
+      <input type="text" class="form-control" placeholder="Name" [(ngModel)]="model.name" name="name" required="required">
+      <input type="text" class="form-control" placeholder="Type" [(ngModel)]="model.type" name="type" required="required">
+    </div>
+    <div class=" add-pokemon ">
+      <button *ngIf="!editing " type="submit" class="btn btn-primary btn-block">Add</button>
+      <button *ngIf="editing " type="submit " class="btn btn-warning btn-block">Update</button>
+    </div>
+  </div>
+</form>
