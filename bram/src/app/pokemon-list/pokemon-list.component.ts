@@ -1,9 +1,6 @@
-import { OnInit, Component, EventEmitter, Input, OnChanges } from '@angular/core';
-import { NgForm }    from '@angular/forms';
-import { Observable } from 'rxjs/Rx';
-import { PokemonBoxComponent } from '../pokemon-box/pokemon-box.component';
-import { EmitterServiceService } from '../emitter-service.service';
-import { Pokemon } from '../model/pokemon'
+import {Component, Input} from "@angular/core";
+import {EmitterServiceService} from "../emitter-service.service";
+import {Pokemon} from "../model/pokemon";
 
 @Component({
   selector: 'app-pokemon-list',
@@ -18,6 +15,7 @@ import { Pokemon } from '../model/pokemon'
           ){}
       // Lokale property
       pokemon: Pokemon[];
+
       // Input properties (uit components)
       @Input() listId: string;
       @Input() editId: string;
