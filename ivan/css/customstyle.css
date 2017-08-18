@@ -1,0 +1,525 @@
+    /*1 ---------- SEARCH ---------- */
+
+    input[type=text] {
+        width: 12em;
+        box-sizing: border-box;
+        border: 2px solid #7ab82c;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: #1d1d1b;
+        padding: 0.75em 1.25em 0.75em 2.5em;
+        transition: width 0.4s ease-in-out;
+        background-color: transparent;
+    }
+    input[type=text]:focus {
+        width: 100%;
+    }
+    .show {
+        display: block;
+        height: 5em;
+        color: white;
+    }
+    .hide {
+        display: none;
+    }
+    .searchClass {
+        margin-left: 9em;
+        padding-top: 0.3em;
+        height: 3em;
+        width: 60%;
+        display: block;
+        background-color: #1d1d1b;
+        position: absolute;
+    }
+    textarea {
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+    .bb {
+        margin-bottom: 2em;
+    }
+    /*2 ---------- FORM VALIDATION ---------- */
+
+    .req_red {
+        border-color: red;
+        animation: req_animation 0.3s both 3;
+    }
+    .ok_green {
+        border-color: #7ab82c;
+    }
+    form>div>input:focus, form>div>textarea:focus {
+        animation: req_animation 0.3s 2 linear;
+        animation-delay: 5s;
+    }
+    @keyframes req_animation {
+        17.5% {
+            transform: translateX(8px);
+        }
+        32.5% {
+            transform: translateX(-6px);
+        }
+        50% {
+            transform: translateX(4px);
+        }
+        65% {
+            transform: translateX(-2px);
+        }
+        83.25% {
+            transform: translateX(1px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    /*3 ----- FADE IN PERSON INFORMATION FORM ----- */
+
+    h2 {
+        color: #007fed;
+        font-weight: bold;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    p {
+        color: #001818;
+    }
+    .wrap {
+        overflow: hidden;
+        top: 10%;
+        right: 10%;
+        bottom: 85px;
+        left: 10%;
+        padding: 20px 50px;
+        display: block;
+        border-radius: 4px;
+        transform: translateY(20px);
+        transition: all 0.5s;
+        visibility: hidden;
+        height: 0;
+    }
+    .wrap .content {
+        opacity: 0;
+        z-index: 1;
+        display: block;
+    }
+    .wrap:before {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        background: white;
+        content: "";
+        top: 10px;
+        left: 50%;
+        color: #fff;
+        border-radius: 50%;
+        transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .wrap.active {
+        visibility: visible;
+        box-shadow: 2px 3px 16px #7ab82c;
+        transition: all 600ms;
+        transform: translateY(0px);
+        transition: all 0.5s;
+        height: 100%;
+        margin-top: 2.5em;
+        margin-bottom: 5em;
+    }
+    .wrap.active:before {
+        display: block;
+        height: 7.5em;
+        width: 7.5em;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        margin-left: -62.5em;
+        margin-top: -62.5em;
+        display: block;
+        transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .wrap.active .content {
+        display: block;
+        z-index: 1;
+        opacity: 1;
+        transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    a.button {
+        padding: 11px 11px 13px 13px;
+        outline: none;
+        border-radius: 50%;
+        background: #007fed;
+        color: #fff;
+        font-size: 24px;
+        position: fixed;
+        left: 99%;
+        top: 5.5em;
+        margin-left: -25px;
+        transition: transform 0.25s;
+    }
+    /*4 ----- NOTIFICATIONS NAVIGATION HOVER ----- */
+
+    .menu a {
+        display: block;
+        position: relative;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .menu a:hover, .menu a:active, .menu a:focus {
+        color: #eee;
+    }
+    .menu a[notification-data]:after {
+        content: attr(notification-data);
+        position: absolute;
+        top: 0;
+        right: 0.5em;
+        height: 1.5em;
+        line-height: 1.5em;
+        padding: 0 .46em;
+        text-align: center;
+        background-color: #1d1d1b;
+        color: #fff;
+        border-radius: 4em;
+        z-index: -1;
+    }
+    .menu a:hover[notification-data]:after, .menu a:active[notification-data]:after {
+        animation: ease notifications .4s;
+        animation-fill-mode: both;
+        top: -1.25em;
+        z-index: 1;
+    }
+    @keyframes notifications {
+        0% {
+            top: 0;
+            transform: translate(0, 0);
+            z-index: -1;
+        }
+        50% {
+            transform: translate(0, -12px);
+            z-index: -1
+        }
+        100% {
+            transform: translate(0, 6px);
+            z-index: 1;
+        }
+    }
+    /*5 -----POPUP PERSON INFO----- */
+
+    .avatar {
+        position: relative;
+        display: inline-block;
+    }
+    .avatar .tooltip {
+        visibility: hidden;
+        background-color: #1d1d1b;
+        color: #fff;
+        text-align: center;
+        margin-top: 1em;
+        border-radius: 0.3em;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        margin-left: -5em;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+    .avatar:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+    .job, .msgs {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .info a:hover, .msgs a {
+        text-decoration: none;
+        color: #fff;
+    }
+    .msgs {
+        background-color: #7ab82c;
+    }
+    .msgs a:hover {
+        color: #1d1d1b;
+    }
+    .info a {
+        text-decoration: none;
+        color: #fff !important;
+    }
+    .info a:hover {
+        color: #7ab82c !important;
+    }
+    /*6 -----OVERLAY PAGE----- */
+
+    .black_overlay {
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 1001;
+        opacity: .80;
+        filter: alpha(opcity=80);
+    }
+    .white_content {
+        display: none;
+        position: absolute;
+        top: 500%;
+        font-size: 1em;
+        left: 40%;
+        width: 20%;
+        padding: 1.2em;
+        background-color: white;
+        z-index: 1002;
+        overflow: auto;
+        border-radius: 0.3em;
+        animation: animate_page 0.3s linear;
+    }
+    @keyframes animate_page {
+        0% {
+            top: 0;
+        }
+    }
+    /*8 -----INFO BOX -----*/
+
+    .rad, .line, .box {
+        transition: all 0.25s ease-in-out;
+    }
+    .rad {
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        width: 31px;
+        height: 31px;
+        top: 18px;
+        border: 3px solid #7ab82c;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+    .rad:hover {
+        top: 0.6em;
+        border: 4px solid #4B4B4B;
+    }
+    .line {
+        margin: 0 auto;
+        display: block;
+        position: absolute;
+        top: 3em;
+        background-color: blue;
+        opacity: 0;
+    }
+    .line.open {
+        opacity: 1;
+    }
+    .box {
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        width: 401px;
+        height: 100px;
+        top: 100px;
+        opacity: 0;
+        font: 1em;
+        text-align: center;
+        line-height: 30px;
+        color: #345;
+        overflow: hidden;
+    }
+    .box.open {
+        height: 300px;
+        opacity: 1;
+    }
+    .rad p {
+        text-align: center;
+        margin-top: 0.2em;
+    }
+    /*7 EXPANDING INFO */
+
+    .menu-item, .menu-open-button {
+        margin-top: 1.5em;
+        background: #1d1d1b;
+        border-radius: 100%;
+        width: 1.5em;
+        height: 1.5em;
+        right: 0.3em;
+        position: absolute;
+        text-align: center;
+        line-height: 1em;
+        transition: transform ease-out 150ms;
+    }
+    .menu-open {
+        display: none;
+    }
+    .hamburger {
+        width: 0.8em;
+        height: 0.07em;
+        /*background: white;*/
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -0.4em;
+        transition: transform 200ms;
+    }
+    .hamburger p {
+        color: white;
+        margin: 0 auto;
+        display: block;
+        height: 2em;
+        margin-top: -0.7em;
+    }
+    .menu-item:hover {
+        background: white;
+        color: #00bcd4;
+    }
+    .menu-item:nth-child(3), .menu-item:nth-child(4), .menu-item:nth-child(5), .menu-item:nth-child(6) {
+        transition-duration: 180ms;
+        position: absolute;
+    }
+    .menu-open-button {
+        z-index: 1;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition-duration: 400ms;
+        transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+        cursor: pointer;
+    }
+    .menu-open-button:hover {
+        transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+    }
+    .info_announcements::before, .info_mail::before, .info_blackboard::before, .info_studentservice::before, .info_roosters::before {
+        padding-top: 17.5%;
+        color: #fff;
+        display: block;
+        text-align: center;
+        font-family: 'iconfont';
+        font-size: 0.8em;
+    }
+    .menu-item:nth-child(3):hover, .menu-item:nth-child(4):hover, .menu-item:nth-child(5):hover, .menu-item:nth-child(6):hover, .menu-item:nth-child(7):hover {
+        text-decoration: none;
+    }
+    .info_announcements::before {
+        content: "b";
+    }
+    .info_mail::before {
+        content: "d";
+    }
+    .info_blackboard::before {
+        content: "e";
+    }
+    .info_studentservice::before {
+        content: "f";
+    }
+    .info_roosters::before {
+        content: "c";
+    }
+    .menu-open:checked+.menu-open-button {
+        transition-timing-function: linear;
+        transition-duration: 200ms;
+        z-index: 1;
+    }
+    .menu-open:checked~.menu-item {
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .menu-open:checked~.menu-item:nth-child(3) {
+        transition-duration: 190ms;
+        transform: translate3d(0, 55px, 0);
+        z-index: 1;
+    }
+    .menu-open:checked~.menu-item:nth-child(4) {
+        transition-duration: 290ms;
+        transform: translate3d(0, 110px, 0);
+        z-index: 1;
+    }
+    .menu-open:checked~.menu-item:nth-child(5) {
+        transition-duration: 390ms;
+        transform: translate3d(0, 165px, 0);
+        z-index: 1;
+    }
+    .menu-open:checked~.menu-item:nth-child(6) {
+        transition-duration: 490ms;
+        transform: translate3d(0, 220px, 0);
+        z-index: 1;
+    }
+    .menu-open:checked~.menu-item:nth-child(7) {
+        transition-duration: 490ms;
+        transform: translate3d(0, 275px, 0);
+        z-index: 1;
+    }
+    .close {
+        text-align: center;
+        margin-top: 2.5em;
+        padding: 1em;
+        display: block;
+        color: #fff !important;
+        text-decoration: none;
+        background-color: #1d1d1b;
+    }
+    .lightclass span {
+        height: 3em;
+        display: block;
+    }
+    .nav-utility a:hover {
+        text-decoration: none;
+        color: #7ab82c !important;
+    }
+    /*8 INFO HOVER SHOW POPUPS */
+
+    .rad, .line, .box {
+        transition: all 0.25s ease-in-out;
+    }
+    .announcements {
+        display: block;
+        cursor: pointer;
+    }
+    .line {
+        margin: 0 auto;
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 0px;
+        top: 5em;
+        left: 49%;
+        opacity: 0.2;
+        background-color: #1d1d1b;
+    }
+    .line.open {
+        height: 7em;
+        opacity: 1;
+    }
+    .box {
+        display: block;
+        position: absolute;
+        height: 0px;
+        top: 10em;
+        opacity: 0.2;
+        background-color: #1d1d1b;
+        line-height: 2em;
+        overflow: hidden;
+        color: #fff;
+        z-index: 1;
+        left: -8em;
+    }
+    .box.open {
+        display: block;
+        opacity: 1;
+        left: -8em;
+        height: 11em;
+    }
+    .mail.box.open {
+        height: 18em;
+    }
+    .mail.box.open p, .blackboard.box.open p, .studentservice.box.open p, .roosters.box.open p, .announcements.box.open p {
+        margin-left: 1em;
+        margin-right: 1em;
+        display: block;
+        color: #fff;
+    }
+    .info_announcements, .info_roosters, .info_mail, .info_blackboard, .info_studentservice {
+        /*height: 100%;*/
+        display: block;
+        width: 100%;
+        border-radius: 1em;
+    }
+    .menu-item:hover {
+        background-color: #7ab82c;
+    }

@@ -1,0 +1,60 @@
+$ani-duration: 10s;
+$box-height: 200px; //HOOGTE ELEMENT
+$box-width: 650px; //BREEDTE ELEMENT
+$path-width: 5px; //BREEDTE LIJNTJE RONDOM
+$clip-width-size: $box-width;
+$clip-height-size: $box-height;
+$main-color: #7ab82c; //KDG GROEN
+$kdg-black: #1d1d1b; //KDG BLACK
+$kdg-nav-text: #fff; //KDG WHITE
+
+%full-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.bb {
+  @extend %full-fill;
+  width: $box-width;
+  height: $box-height;
+  color: $main-color;
+  position: relative;
+
+  &::after,
+  &::before {
+    @extend %full-fill;
+    content: '';
+    box-shadow: inset 0 0 0 $path-width;
+    animation: clippingAnimation $ani-duration linear infinite;
+  }
+
+  &::before {
+    animation-delay: $ani-duration * -.5;
+  }
+}
+@keyframes clippingAnimation {
+  0%,
+  100% {
+    clip: rect(0px, $clip-width-size, $path-width, 0px);
+  }
+
+  25% {
+    clip: rect(0px, $path-width, $clip-height-size , 0px);
+  }
+
+  50% {
+    clip: rect($clip-height-size - $path-width, $clip-width-size, $clip-width-size, 0px);
+  }
+
+  75% {
+    clip: rect(0px, $clip-width-size, $clip-height-size, $clip-width-size - $path-width);
+  }
+}
+// CLIPPING :
+// - from the top of the element
+// - from the right of the element
+// - from the bottom of the element
+// - from the left of the element

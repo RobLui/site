@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>KdG Intranet</title>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/responsive.css">
+  <!-- CUSTOM CSS ROBBERT -->
+  <link rel="stylesheet" type="text/css" href="css/customstyle.css">
+  <link rel="stylesheet" type="text/css" href="css/sass.css">
+</head>
+
+<body>
+  <div id="fade" class="black_overlay"></div>
+  <div>
+    <header>
+      <div class="white-banner">
+        <div class="wrapper cfx">
+          <nav class="site-switch">
+            <ul>
+              <li class="active"><a href="home.html">Studentenportaal</a></li>
+              <li><a href="#">Medewerkersportaal</a></li>
+            </ul>
+          </nav>
+          <nav class="nav-utility">
+            <ul>
+              <nav class="nav-utility">
+                <ul>
+                  <li><a href="prikbordbericht-overzicht.html">Prikbord</a></li>
+                  <li class="info_click"><a href="javascript:void(0)">Ivan Waumans</a></li>
+
+                  <div id="light" class="white_content">
+                    <div class="lightclass">
+                      <h2>Profiel:</h2>
+                      <span><label for="Naam">Naam:</label> Waumans</span>
+                      <span><label for="Voornaam">Voornaam:</label> Ivan</span>
+                      <span><label for="Richting">Richting:</label> MTA</span>
+                      <span><label for="E-mail">E-mail:</label> ivanwaumans@kdg.be</span>
+                      <span><label for="Student-ID">ID:</label> XXXXXXX</span>
+                    </div>
+                    <a href="#" class="close">Sluit</a>
+                  </div>
+                </ul>
+              </nav>
+        </div>
+      </div>
+      <div class="black-banner">
+        <div class="wrapper cfx">
+          <div id="logo">
+            <a href="./home.html"><img src="svg/KdG_H_Closed_White.svg" alt="Logo van Karel de Grote Hogeschool"></a>
+          </div>
+          <nav class="nav-main-responsive">
+            <ul>
+              <li class="search"><a href="#">Zoeken</a></li>
+              <li class="menu">
+                <a href="#">
+                  <div class="icon-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </div>
+                  Menu
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="nav-main">
+            <ul class="menu">
+              <li class="home active"><a href="#">Home</a></li>
+              <li class="announcements"><a href="#" notification-data="3">Mededelingen</a></li>
+              <li class="schedule"><a href="#" notification-data="12">Roosters</a></li>
+              <li class="email"><a href="#" notification-data="107">KdG Mail</a></li>
+              <li class="blackboard"><a href="#" notification-data="14">Blackboard</a></li>
+              <li class="eservice"><a href="#">E-studentservice</a></li>
+              <li class="search"><a href="#">Zoeken</a></li>
+            </ul>
+          </nav>
+          <div class="expandbox">
+            <form>
+              <input class="scheck hide" type="text" name="search" placeholder="Zoeken.."></i>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="white-banner">
+        <div class="crumbtrail">
+
+          <div class="wrapper">
+            <ol>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Studeren</a></li>
+              <li>Studie en loopbaan</li>
+            </ol>
+            <!--  PRIKBORD WRAP -->
+            <div class="form">
+              <div class='wrap'>
+                <div class='content'>
+                  <h1>Prikbordbericht toevoegen</h1>
+
+                  <p>Je kan enkel prikbordberichten aanmaken of reageren op prikbordberichten wanneer je je profiel niet onzichtbaar gemaakt hebt.</p>
+
+                  <form action="prikbordbericht-overzicht.html" method="get" id="form_class">
+                    <div>
+                      <label for="fld-title">Titel *</label>
+                      <input type="text " name="title" id="fld-title" class="">
+                    </div>
+
+                    <div>
+                      <label for="fld-targetgroup">Doelgroep *</label>
+                      <input type="text " name="targetgroup" id="fld-targetgroup" class="">
+                    </div>
+
+                    <div>
+                      <label for="fld-category">Categorie *</label>
+                      <input type="text " name="category" id="fld-category" class="">
+                    </div>
+
+                    <div>
+                      <label for="fld-enddate">Tonen tot</label>
+                      <input type="text " name="enddate" id="fld-enddate" class="">
+                    </div>
+
+                    <div>
+                      <label for="fld-msg">Bericht *</label>
+                      <div class="bb">
+                        <textarea name="message" id="fld-msg" rows="5" class=""></textarea>
+                      </div>
+                    </div>
+
+                    <div>
+                      <button type="submit" id="submit_btn" class="btn">Prikbordbericht plaatsen</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <!--  END WRAP-->
+
+              <nav class="info_menu">
+                <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+                <label class="menu-open-button" for="menu-open">
+                  <span class="hamburger hamburger-1"><p>i</p></span>
+                  <span class="hamburger hamburger-2"><p>i</p></span>
+                  <span class="hamburger hamburger-3"></span>
+                </label>
+                <a href="#" class="menu-item"> <i></i> </a>
+                <a href="#" class="menu-item"> <i></i> </a>
+                <a href="#" class="menu-item"> <i></i> </a>
+                <a href="#" class="menu-item"> <i></i> </a>
+                <a href="#" class="menu-item"> <i></i> </a>
+              </nav>
+
+              <section class="page-actions">
+                <a href="#" class="edit"></a>
+                <a href="#" class="forward"></a>
+                <a href="#" class="favorite"></a>
+              </section>
+              <section class="page-action-forms">
+                <div class="forward-form wrapper">
+                  <h2>Deze pagina doorsturen</h2>
+                  <form action="#" method="post">
+                    <div>
+                      <h3>Van</h3>
+                      <div class="user">
+                        <div class="avatar"><img src="images/users/ivan.waumans.jpg" alt="Ivan Waumans"></div>
+                        <div class="username">Ivan Waumans</div>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="fld-forward-to">Aan *</label>
+                      <p>Vul hier het E-mailadres in van de persoon naar wie je deze pagina wenst door te sturen.<br>Je kan meerdere E-mailadressen invullen door ze te scheiden door een comma.</p>
+                      <input type="text" name="forward-to" id="fld-forward-to">
+                    </div>
+
+                    <div>
+                      <label for="fld-forward-msg">Bericht *</label>
+                      <textarea name="message" id="fld-forward-msg" rows="5"></textarea>
+                    </div>
+
+                    <button type="submit">Verzenden</button>
+                  </form>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="white-banner">
+          <div class="wrapper">
+            <nav class="nav-sub">
+              <h1>Studeren</h1>
+
+              <section class="nav-group third">
+                <h2>Studie</h2>
+                <ul>
+                  <li class="active"><a href="#">Studie en loopbaan</a></li>
+                  <li><a href="#">Studie en stage in het buitenland</a></li>
+                  <li><a href="#">Examen en evaluatie</a></li>
+                  <li><a href="#">Hogeschoolonderwijs- en Examenreglement (HOE)</a></li>
+                  <li><a href="#">Rechten en plichten</a></li>
+                  <li><a href="#">Administratie</a></li>
+                </ul>
+              </section>
+
+              <section class="nav-group third">
+                <h2>Ondersteuning</h2>
+                <ul>
+                  <li><a href="#">Begeleiding en advies</a></li>
+                  <li><a href="#">Intranet voor studenten</a></li>
+                  <li><a href="#">Bibliotheek</a></li>
+                  <li><a href="#">ICT voor studenten: services en platformen</a></li>
+                </ul>
+              </section>
+
+              <section class="nav-group third">
+                <h2>Ook interessant</h2>
+                <ul>
+                  <li><a href="#">Studentenleven</a></li>
+                  <li><a href="#">Missie en Visie</a></li>
+                  <li><a href="#">Praktijk en werkveld</a></li>
+                </ul>
+              </section>
+            </nav>
+          </div>
+        </div>
+
+    </header>
+    <footer>
+      <div class="black-banner">
+        <div class="wrapper">
+          <div class="nav-footer">
+            <div class="nav-group third">
+              <h2>Handig</h2>
+              <ul>
+                <li><a href="#">Woordenlijst</a></li>
+                <li><a href="#">Onthaal nieuwe studenten</a></li>
+                <li><a href="#">Contacteer de redactie</a></li>
+              </ul>
+            </div>
+
+            <div class="nav-group third">
+              <h2>Karel de Grote<br>Hogeschool</h2>
+              <ul>
+                <li><a href="http://www.kdg.be">www.kdg.be</a></li>
+              </ul>
+            </div>
+
+            <div class="nav-group third">
+              <h2>Mijn KdG account</h2>
+              <ul>
+                <li><a href="#">Profiel beheren</a></li>
+                <li><a href="#">Jouw Favorieten</a></li>
+                <li><a href="#">Jouw Prikbordberichten</a></li>
+                <li><a href="#">Jouw Mededelingen</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <!-- CUSTOM JS ROBBERT -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
