@@ -1,12 +1,9 @@
 // Dit id de geupdate versie van de vorige router voorziening die angular(1) had
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from "@angular/core";
+import {RouterModule, Routes} from "@angular/router";
+import {PokemonListComponent} from "./pokemon-list/pokemon-list.component";
+import {PokemonBoxComponent} from "./pokemon-box/pokemon-box.component";
 // Verschillende components die geroute moeten worden hier onder
-
-import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
-import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
-import { PokemonBoxComponent } from './pokemon-box/pokemon-box.component';
-import { PokemonComponent } from './index';
 
 // Hier worden de routes in gemaakt
 const routing: Routes = [

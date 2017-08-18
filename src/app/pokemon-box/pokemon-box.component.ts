@@ -1,10 +1,8 @@
-import { Component, OnInit, Output, EventEmitter,Input } from '@angular/core';
-
+import {Component, Input} from "@angular/core";
 // SERVICE
-import { EmitterServiceService } from '../emitter-service.service';
-
+import {EmitterServiceService} from "../emitter-service.service";
 // MODEL
-import { Pokemon } from '../model/pokemon'
+import {Pokemon} from "../model/pokemon";
 
 @Component({
   selector: 'app-pokemon-box',

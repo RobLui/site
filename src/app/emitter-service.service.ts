@@ -1,11 +1,11 @@
-import { Injectable, EventEmitter, Input } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import {EventEmitter, Injectable} from "@angular/core";
+import {Headers, Http, RequestOptions, Response} from "@angular/http";
+import {Observable} from "rxjs/Rx";
 // MODEL
-import { Pokemon } from './model/pokemon';
+import {Pokemon} from "./model/pokemon";
 
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/catch";
 
 @Injectable()
 export class EmitterServiceService {
