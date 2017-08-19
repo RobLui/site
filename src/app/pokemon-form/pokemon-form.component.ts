@@ -2,14 +2,15 @@ import {Component, Input} from "@angular/core";
 import {Observable} from "rxjs/Rx";
 import {EmitterServiceService} from "../emitter-service.service";
 import {Pokemon} from "../model/pokemon";
+import {OnChanges} from "angular2/core";
 
 @Component({
   selector: 'app-pokemon-form',
   templateUrl: './pokemon-form.component.html',
-  styleUrls: ['./pokemon-form.component.css']
+  // styleUrls: ['./pokemon-form.component.css']
 })
 
-export class PokemonFormComponent {
+export class PokemonFormComponent implements OnChanges{
 
   constructor(
       private EmitterServiceService: EmitterServiceService
@@ -36,24 +37,25 @@ export class PokemonFormComponent {
 
       // Subscribe to observable
       pokemonOperation.subscribe(
-                              comments => {
-                                  // Emit list event
-                                  EmitterServiceService.get(this.listId).emit(Pokemon);
-                                  // Empty model
-                                  this.model = new Pokemon(new Date(), '', '');
-                                  // Switch editing status
-                                  if(this.editing) this.editing = !this.editing;
-                              },
-                              err => {
-                                  // Log errors if any
-                                  console.log(err);
-                              });
+          comments => {
+              // Emit list event
+              EmitterServiceService.get(this.listId).emit(Pokemon);
+              // Empty model
+              this.model = new Pokemon(new Date(), '', '');
+              // Switch editing status
+              if(this.editing) this.editing = !this.editing;
+          },
+          err => {
+              // Log errors if any
+              console.log(err);
+          });
   }
-
+  //Deze gaat af bij de edit knop
   ngOnChanges() {
       EmitterServiceService.get(this.editId).subscribe((pokemon:Pokemon) => {
-          this.model = pokemon
+          this.model = pokemon;
           this.editing = true;
+          // console.log("edit changes");
       });
   }
 }

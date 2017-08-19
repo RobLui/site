@@ -1,16 +1,17 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input, SimpleChanges} from "@angular/core";
 // SERVICE
 import {EmitterServiceService} from "../emitter-service.service";
 // MODEL
 import {Pokemon} from "../model/pokemon";
+import {OnChanges} from "angular2/core";
 
 @Component({
   selector: 'app-pokemon-box',
   templateUrl: './pokemon-box.component.html',
-  styleUrls: ['./pokemon-box.component.css']
+  // styleUrls: ['./pokemon-box.component.css']
 })
 
-export class PokemonBoxComponent {
+export class PokemonBoxComponent implements OnChanges{
 
   // Constructor
    constructor(
@@ -20,6 +21,8 @@ export class PokemonBoxComponent {
   @Input() pokemon: Pokemon;
   @Input() listId: string;
   @Input() editId: string;
+
+  @Input() valueToChange:   any;
 
   editPokemon(){
       // Emit edit event
@@ -33,6 +36,10 @@ export class PokemonBoxComponent {
                                   EmitterServiceService.get(this.listId).emit(comments);
                               },
                               err => { console.log(err); });
+  }
+  //Deze gaat af bij het inladen van de box-component
+  ngOnChanges(changes:SimpleChanges){
+      console.log("test");
   }
 
 }
