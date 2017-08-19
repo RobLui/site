@@ -36,21 +36,21 @@ export class EmitterServiceService{
                          }
 
      // Add a new pokemon
-    addPokemon (body: Body): Observable<Pokemon[]> {
-        // let bodyString = JSON.stringify(body); // Stringify payload
+    addPokemon (body: Object): Observable<Pokemon[]> {
+        let bodyString = JSON.stringify(body); // Stringify payload
         let headers = new Headers({ 'Content-Type': 'application/json'}); // ... Set content type to JSON
         let options = new RequestOptions({ headers: headers }); // Create a request option
-        return this.http.post(this.url, body) // ...using post request
+        return this.http.post(this.url, body,options) // ...using post request
                          .map((res:Response) => res.json())// ...and calling .json() on the response to return data
                          .catch((error:any) => Observable.throw(error.json().error || 'Error - Adding failed, data is inserted tho..')); //...errors if any
     }
 
     // Update pokemon
-    updatePokemon (body: Body): Observable<Pokemon[]> {
-        // let bodyString = JSON.stringify(body); // Stringify payload
+    updatePokemon (body: Object): Observable<Pokemon[]> {
+        let bodyString = JSON.stringify(body); // Stringify payload
         let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         let options = new RequestOptions({ headers: headers }); // Create a request option
-        return this.http.put(`${this.url}/${body['id']}`, body) // ...using put request
+        return this.http.put(`${this.url}/${body['id']}`, body,options) // ...using put request
                          .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
                          .catch((error:any) => Observable.throw(error.json().error || 'Error - Updating failed')); //...errors if any
     }
