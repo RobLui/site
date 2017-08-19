@@ -1,5 +1,6 @@
 // MODULES
 import {BrowserModule} from "@angular/platform-browser";
+import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from "@angular/core";
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
@@ -11,6 +12,7 @@ import {PokemonBoxComponent} from "./pokemon-box/pokemon-box.component";
 import {PokemonComponent} from "./index";
 // SERVICES
 import {EmitterServiceService} from "./emitter-service.service";
+import {RoutedComponents} from "./routes";
 
 // ROUTES
 
@@ -28,7 +30,8 @@ import {EmitterServiceService} from "./emitter-service.service";
     HttpModule
   ],
   providers: [
-    EmitterServiceService
+    EmitterServiceService,
+    RoutedComponents
   ],
   bootstrap: [
     AppComponent
