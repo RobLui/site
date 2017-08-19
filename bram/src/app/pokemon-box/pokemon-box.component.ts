@@ -39,7 +39,7 @@ export class PokemonBoxComponent implements OnChanges{
   }
   //Deze gaat af bij het inladen van de box-component
   ngOnChanges(changes:SimpleChanges){
-      console.log("test");
+      // console.log("test");
   }
 
 }
