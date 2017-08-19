@@ -7,11 +7,11 @@ import {PokemonBoxComponent} from "./pokemon-box/pokemon-box.component";
 // Hier worden de routes in gemaakt
 const routing: Routes = [
   {
-    path: 'list',
+    path: '/list',
     component: PokemonListComponent
   },
   {
-    path: 'box',
+    path: '/box',
     component: PokemonBoxComponent
   }
 ];
@@ -21,5 +21,6 @@ const routing: Routes = [
     exports: [NgModule]
   })
   export class AppRoutingModule { }
+
   // Wordt hieronder geexporteerd  om beschikbaar te zijn in andere components
   export const RoutedComponents = [PokemonListComponent, PokemonBoxComponent];
